@@ -1,0 +1,18 @@
+export const cardImages = [
+  { "src": "src/assets/1a.png" },
+  { "src": "src/assets/1b.png" },
+  { "src": "src/assets/2a.png" },
+  { "src": "src/assets/2b.png" },
+  { "src": "src/assets/3a.png" },
+  { "src": "src/assets/3b.png" },
+  { "src": "src/assets/4a.png" },
+  { "src": "src/assets/4b.png" },
+  { "src": "src/assets/5a.png" },
+  { "src": "src/assets/5b.png" },
+  { "src": "src/assets/6a.png" },
+  { "src": "src/assets/6b.png" },
+  { "src": "src/assets/7a.png" },
+  { "src": "src/assets/7b.png" },
+  { "src": "src/assets/8a.png" },
+  { "src": "src/assets/8b.png" },
+];
