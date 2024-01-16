@@ -1,9 +1,5 @@
 import { MouseEventHandler, useState } from "react";
 
-// REDO ?
-// https://github.com/basarat/tic-tac-toe/blob/integration/src/components/Game.tsx ?
-// https://codepen.io/angelo_jin/pen/GROEdMK
-
 const TicTacToe = () => {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [xPlayer, setXPlayer] = useState(true);

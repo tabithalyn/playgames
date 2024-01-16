@@ -51,8 +51,8 @@ const Dice = () => {
         <div>
           <div className="flex flex-wrap justify-center">
             <div className="w-full text-center py-5">
-              <h1 className="text-6xl">{score}</h1>
-              <p className="text-2xl font-bold">Total Score</p>
+              <h1 className="text-5xl">{score}</h1>
+              <p className="text-xl font-bold">Total Score</p>
             </div>
             <NumberSelector
               error={error}
@@ -66,7 +66,7 @@ const Dice = () => {
             <img
               src={`src/assets/dice/dice_${currentDice}.png`}
               alt="dice"
-              className="hover:cursor-pointer w-1/5 shadow-xl rounded-3xl bg-black"
+              className="hover:cursor-pointer w-1/6 shadow-xl rounded-3xl bg-black"
               onClick={roleDice}
             />
           </div>

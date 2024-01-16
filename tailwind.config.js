@@ -16,6 +16,9 @@ export default {
         "warmGreyLight": "#979B9B",
         "lightBeige": "#F1EAC6",
         "bluey": "#348798"
+      },
+      screens: {
+        'xs': '340px'
       }
     },
   },

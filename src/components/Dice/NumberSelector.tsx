@@ -21,7 +21,7 @@ const NumberSelector = ({
         {diceNumber.map((value, i) => (
           <li
             key={i}
-            className={`h-20 w-20 border border-black grid place-items-center text-xl font-extrabold hover:cursor-pointer transition-all active:bg-black active:text-white hover:border-2 ${value === selectedNumber ? "bg-black text-white" : "text-black bg-white"}`}
+            className={`h-16 w-16 border border-black grid place-items-center text-xl font-extrabold hover:cursor-pointer transition-all active:bg-black active:text-white hover:border-2 ${value === selectedNumber ? "bg-black text-white" : "text-black bg-white"}`}
             onClick={() => handleNumberSelector(value)}
           >{value}</li>
         ))}
