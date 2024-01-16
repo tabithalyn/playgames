@@ -1,9 +1,6 @@
 import { useState } from "react";
 import NumberSelector from "../components/Dice/NumberSelector";
-
-// turn rules into popup modal
-// toast to say 'match' or 'not a match' ?
-// dice animation (flick through all images before landing on one ?)
+import ThemeSwitcher from "../components/ThemeSwitcher";
 
 const Dice = () => {
   const [isGameStarted, setIsGameStarted] = useState(false);
@@ -48,7 +45,8 @@ const Dice = () => {
     <>
     {
       isGameStarted ? (
-        <div>
+        <div className="w-[100vw] h-[100vh] overflow-hidden bg-[#ecf2eb] dark:bg-[#1f241f] dark:text-[#ecf2eb]">
+          <ThemeSwitcher />
           <div className="flex flex-wrap justify-center">
             <div className="w-full text-center py-5">
               <h1 className="text-5xl">{score}</h1>
@@ -66,13 +64,13 @@ const Dice = () => {
             <img
               src={`src/assets/dice/dice_${currentDice}.png`}
               alt="dice"
-              className="hover:cursor-pointer w-1/6 shadow-xl rounded-3xl bg-black"
+              className="hover:cursor-pointer w-1/6 shadow-xl rounded-[36px] bg-[#1f241f] dark:invert dark:opacity-70"
               onClick={roleDice}
             />
           </div>
           <div className="w-full flex flex-wrap justify-center py-10 gap-2">
-            <button onClick={resetScore} className="py-4 px-8 hover:bg-gray-300 hover:border-gray-500 transition-all border border-gray-400">Reset</button>
-            <button onClick={() => setShowRules((prev) => !prev)} className="py-4 px-8 hover:bg-gray-300 hover:border-gray-500 transition-all border border-gray-400">
+            <button onClick={resetScore} className="py-2 px-6 hover:bg-[#768773] hover:border-[#f3f8f3] transition-all border border-[#a0a6a0] hover:text-[#f3f8f3] dark:bg-[#2e332e] dark:border-[#474e47] dark:text-[#798579] dark:hover:bg-[#3d463d] bg-[#f3f8f3] hover:cursor-pointer">Reset</button>
+            <button onClick={() => setShowRules((prev) => !prev)} className="py-2 px-6 hover:bg-[#768773] hover:border-[#f3f8f3] transition-all border border-[#a0a6a0] hover:text-[#f3f8f3] dark:bg-[#2e332e] dark:border-[#474e47] dark:text-[#798579] dark:hover:bg-[#3d463d] bg-[#f3f8f3] hover:cursor-pointer">
               {showRules ? "Hide" : "Show"} Rules
             </button>
           </div>
@@ -91,13 +89,15 @@ const Dice = () => {
           ) : null}
         </div>
       ) : (
-        <div className="h-[97vh] max-w-[97vw] flex my-0 mx-auto items-center">
+        <div className="font-inconsolata h-[100vh] max-w-[97vw] flex my-0 mx-auto items-center justify-center">
+          <div className="w-3/5 h-3/5 bg-[#ecf2eb]">
           <div>
-            <img src="src/assets/dice/dies.png" alt="dies" className="w-3/4" />
+            <img src="src/assets/dice/dies.png" alt="dies" className="w-[10%]" />
           </div>
           <div>
             <h1 className="text-6xl whitespace-nowrap">Dice Game</h1>
             <button onClick={toggleGamePlay}>Play Now</button>
+          </div>
           </div>
         </div>
       )

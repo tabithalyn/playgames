@@ -8,10 +8,6 @@ import TicTacToe from "./pages/TicTacToe";
 import Wurdel from "./pages/Wurdel";
 import HangTheMan from "./pages/HangTheMan";
 
-/*
-multi-page site with small games on each
-(tic tac toe, wordle, etc)
-*/
 
 function App() {
 

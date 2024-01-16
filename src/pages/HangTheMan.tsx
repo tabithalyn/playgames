@@ -3,6 +3,7 @@ import words from "../data/wordList.json";
 import HangTheManWord from "../components/HangTheMan/HangTheManWord";
 import HangTheManDrawing from "../components/HangTheMan/HangTheManDrawing";
 import Keyboard from "../components/HangTheMan/Keyboard";
+import ThemeSwitcher from "../components/ThemeSwitcher";
 
 const getWord = () => {
   return words[Math.floor(Math.random() * words.length)];
@@ -57,13 +58,15 @@ const HangTheMan = () => {
   }
 
   return (
-    <div className="flex flex-col gap-1 my-0 mx-auto items-center max-w-[800px]">
+    <div className="w-[100vw] h-[100vh] bg-[#eef3f9] flex flex-wrap justify-center items-center font-inconsolata dark:bg-[#0b1523]">
+      <ThemeSwitcher />
+      <div className="flex flex-col gap-1 my-0 mx-auto items-center max-w-[800px] bg-[#fefefe] dark:bg-[#152335] p-5">
       <div className="text-center text-lg">
         {win ? (
           <div className="fixed top-0 left-0 w-[100vw] h-[100vh] flex items-center flex-wrap justify-center p-4 z-20 bg-green-50 bg-opacity-90">
             <p className="opacity-80 bg-opacity-80 w-3/5 h-2/4 bg-green-100 border border-green-400 flex flex-wrap justify-center items-center">
               <span className="w-full h-1/2 text-4xl font-extrabold flex flex-wrap items-center justify-center">
-                <span className="w-full">You Win! 🙂</span>
+                <span className="w-full">You Win! &#9786;</span>
                 <span className="w-full text-2xl font-normal text-center">The word was <b>{playWord}</b>.</span>
               </span>
               <span className="w-full h-1/3 flex justify-center items-center">
@@ -73,10 +76,10 @@ const HangTheMan = () => {
           </div>
         ) : null}
         {lose ? (
-          <div className="fixed top-0 left-0 w-[100vw] h-[100vh] flex items-center flex-wrap justify-center p-4 z-20 bg-red-50 bg-opacity-90">
-            <p className="opacity-80 bg-opacity-80 w-3/5 h-2/4 bg-red-100 border border-red-400 flex flex-wrap justify-center items-center">
+          <div className="fixed top-0 left-0 w-[100vw] h-[100vh] flex items-center flex-wrap justify-center p-4 z-20 bg-red-50 bg-opacity-90 dark:bg-red-950 dark:bg-opacity-90">
+            <p className="opacity-80 bg-opacity-80 w-3/5 h-2/4 bg-red-100 dark:bg-[#b45353] border dark:border-red-800 border-red-400 flex flex-wrap justify-center items-center">
             <span className="w-full h-1/2 text-4xl font-extrabold flex flex-wrap items-center justify-center">
-                <span className="w-full">You Lose! 🙁</span>
+                <span className="w-full">You Lose! &#9785;</span>
                 <span className="w-full text-2xl font-normal text-center">The word was <b>{playWord}</b>.</span>
               </span>
               <span className="w-full h-1/3 flex justify-center items-center">
@@ -96,6 +99,7 @@ const HangTheMan = () => {
           addGuessedLetter={addGuessedLetter}
         />
       </div>
+    </div>
     </div>
   );
 }

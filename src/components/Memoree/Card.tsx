@@ -22,7 +22,7 @@ const Card = ({ card, flipped, callback }:{
         style={{ "backfaceVisibility":"hidden", "transformStyle":"preserve-3d"}}
       />
       <img
-        src="src/assets/back.png"
+        src="src/assets/memoree/back.png"
         alt="card back"
         className={`${flipped ? "z-0" : "z-40"} absolute hover:cursor-pointer w-[7%]`}
       />

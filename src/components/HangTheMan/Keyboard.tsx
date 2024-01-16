@@ -26,8 +26,8 @@ const Keyboard = ({
             onClick={() => addGuessedLetter(key)}
             className={`
             xs:w-[9%] sm:w-[8%] md:w-[6%] lg:w-[6%] border-2 border-black bg-none text-3xl uppercase p-1 font-bold cursor-pointer text-black 
-            ${isActive ? "bg-sky-600 text-white" : ""} 
-            ${isInactive ? "opacity-40" : "bg-sky-50"} hover:bg-sky-400 disabled:hover:bg-sky-600 disabled:hover:cursor-default
+            ${isActive ? "bg-sky-600 text-white dark:text-[#9a9ca0]" : ""} 
+            ${isInactive ? "opacity-40" : "bg-sky-50 dark:bg-[#64696e]"} dark:hover:bg-[#385987] hover:bg-sky-400 disabled:hover:bg-sky-600 disabled:hover:cursor-default
             `}
             disabled={isInactive||isActive||disabled}
             key={key}
