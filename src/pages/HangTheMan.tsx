@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import words from "../data/wordList.json";
 import HangTheManWord from "../components/HangTheMan/HangTheManWord";
 import HangTheManDrawing from "../components/HangTheMan/HangTheManDrawing";
-import Keyboard from "../components/HangTheMan/Keyboard";
+import Keyboard from "../components/Keyboard";
 import ThemeSwitcher from "../components/ThemeSwitcher";
 
 const getWord = () => {
