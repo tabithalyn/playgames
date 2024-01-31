@@ -17,7 +17,7 @@ const Card = (props:CardProps) => {
   }
 
   return (
-    <div className={`rounded-lg w-full h-[93%] ${(props.clearedCards.length === props.cardIds.length) ? "bg-green-200" : "bg-gray-300"}`}>
+    <div className={`rounded-lg w-full h-[93%] ${(props.clearedCards.length === props.cardIds.length) ? "bg-indigo-200 dark:bg-[#2f3038]" : "bg-[#717daf] dark:bg-[#0c0c0c]"}`}>
       <div
         className={`${props.isInactive ? "opacity-0 cursor-default" : ""} relative cursor-pointer w-full h-full`}
         onClick={handleClick}

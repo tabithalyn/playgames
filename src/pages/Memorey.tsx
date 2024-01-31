@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import Card from "../components/Memorey/Card";
 import ConfettiExplosion from "react-confetti-explosion";
+import ThemeSwitcher from "../components/ThemeSwitcher";
+import { Link } from "react-router-dom";
 
 const cardIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 cardIds.sort(() => 0.5 - Math.random());
@@ -73,22 +75,20 @@ const Memorey = () => {
   }
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center h-[100vh] bg-indigo-100 dark:bg-[#161729]">
       {(cardIds.length === clearedCards.length) ? (
           <ConfettiExplosion />
         ) : null}
-      <div className="flex flex-row justify-center items-center text-2xl w-[800px] m-2 gap-2">
-        <div className="flex justify-between w-[800px]">
-          <span>Moves: {moves}</span>
+      <div className="flex flex-row justify-center items-center text-2xl w-[600px] m-2 gap-2">
+        <div className="flex justify-around w-[800px]">
+          <span className="dark:text-[#717382]">Moves: {moves}</span>
+          <ThemeSwitcher moonColor="silver" sunColor="#363c5c" />
           {localStorage.getItem("bestScore") ? (
-            <span>Best Score: {bestScore}</span>
+            <span className="dark:text-[#717382]">Best Score: {bestScore}</span>
           ) : null}
-          <button onClick={() => {window.location.reload()}} className="w-[100px] h-10 rounded border-none text-lg text-white bg-gray-600">
-            RESTART
-          </button>
         </div>
       </div>
-      <div className="grid items-center grid-cols-4 grid-rows-3 gap-2 w-[500px] h-[400px]">
+      <div className="grid items-center grid-cols-4 grid-rows-3 gap-2 w-[500px] h-[400px] dark:opacity-50">
         {cardIds.map((i:number) => {
           return <Card
             key={i}
@@ -102,6 +102,14 @@ const Memorey = () => {
             clearedCards={clearedCards}
           />
         })}
+      </div>
+      <div className="flex flex-wrap justify-around w-3/6">
+        <Link to="/" className="w-36 p-2 rounded-lg text-sm text-white border-2 mt-5 font-bold border-black bg-[#363c5c] hover:bg-[#5f6795] hover:border-[#565d8a] dark:bg-[#0d0e16] dark:text-[#5d5e75] dark:border-[#06070a] dark:hover:text-black dark:hover:bg-[#363c5c] dark:hover:border-[#10131c] transition-all tracking-wide flex items-center justify-center">
+          &larr; GAMES MENU
+        </Link>
+        <button onClick={() => {window.location.reload()}} className="w-24 p-2 rounded-lg text-base text-white border-2 mt-5 font-bold border-black bg-[#363c5c] hover:bg-[#5f6795] hover:border-[#565d8a] dark:bg-[#0d0e16] dark:text-[#5d5e75] dark:border-[#06070a] dark:hover:text-black dark:hover:bg-[#363c5c] dark:hover:border-[#10131c] transition-all tracking-wide">
+          RESTART
+        </button>
       </div>
     </div>
   );

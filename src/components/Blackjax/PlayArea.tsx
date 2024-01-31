@@ -7,7 +7,7 @@ const PlayArea = (props:PropsType) => {
     <>
     <div className="h-full flex flex-wrap items-center justify-center">
       <div className="flex flex-col items-center justify-center w-full">
-        <div className={`${props.isTurnOver ? "visible bg-green-400 border border-green-900 py-2 px-3 rounded-full my-2" : "hidden border border-green-900 py-2 px-3 rounded-full my-2"}`}>
+        <div className={`${props.isTurnOver ? "visible bg-green-600 dark:bg-[#0f2212] dark:border-[#09140a] dark:text-[#9faba4] border border-green-900 py-2 px-3 rounded-full mb-2 -mt-4 h-[42px]" : "hidden border border-green-900 py-2 px-3 rounded-full my-2 h-[42px]"}`}>
           {props.dealersHand.length !== 0 && getScoreDisplay(props.dealersHand)}
         </div>
         <div className="flex flex-wrap justify-center">
@@ -41,13 +41,13 @@ const PlayArea = (props:PropsType) => {
           );
         })}
         <div className="w-full flex justify-center items-center mt-1">
-          <span className="bg-green-400 border border-green-900 py-2 px-3 rounded-full my-2">
+          <span className="bg-green-600 border border-green-900 py-2 px-3 rounded-full my-2 dark:bg-[#0f2212] dark:border-[#09140a] dark:text-[#9faba4]">
             {props.playersHand.length !== 0 ? getScoreDisplay(props.playersHand) : null}
           </span>
         </div>
       </div>
     </div>
-    <div className="flex justify-center items-center flex-wrap mt-5 mb-8 w-full">
+    <div className="flex justify-center items-center flex-wrap mt-2 mb-10 w-full">
       {props.isTurnOver ? (
         <Chip
           label={judge(props.dealersHand, props.playersHand)}
@@ -64,7 +64,9 @@ const PlayArea = (props:PropsType) => {
             boxShadow: "0px 0px 3px #FFD700"
           }}
         />
-      ) : null}
+      ) : (
+        <div className="h-[40px]"></div>
+      )}
     </div>
     </>
   );

@@ -25,19 +25,19 @@ const Card = (props:{
   const topAndBottom = props.card === null || props.hide ? "" : props.card.rank;
   const middle = props.card === null || props.hide ? "" : props.card.suit;
 
-  const cardClass = topAndBottom !== ""  ? "w-[85px] h-[130px] border-2 border-gray-300 rounded-lg shadow-lg bg-gray-100" : "w-[85px] h-[130px] border-2 border-gray-300 rounded-lg shadow-lg bg-black";
+  const cardClass = topAndBottom !== ""  ? "w-[85px] h-[130px] border-2 border-gray-800 rounded-lg shadow-lg bg-gray-100 dark:bg-[#9faba4] dark:border-gray-950" : "w-[85px] h-[130px] border-2 border-gray-800 rounded-lg shadow-lg bg-black dark:border-gray-950";
 
   return (
     <div className={cardClass}>
       <div className="flex flex-col w-full h-full">
         <div className={`flex flex-start text-xl h-[30px] ml-1 ${cardFaceColor}`}>
-          <div className={`w-full text-left ml-1 ${props.card.suit === "♥️" || props.card.suit === "♦️" ? "text-red-500" : "text-black"}`}>{topAndBottom}</div>
+          <div className={`w-full text-left ml-1 ${props.card.suit === "♥️" || props.card.suit === "♦️" ? "text-red-500 dark:text-red-950" : "text-black"}`}>{topAndBottom}</div>
         </div>
-        <div className={`text-5xl h-[60px] mb-2 flex flex-wrap items-center justify-center ${props.card.suit === "♥️" || props.card.suit === "♦️" ? "text-red-500" : "text-black"} text-center`}>
+        <div className={`text-5xl h-[60px] mb-2 flex flex-wrap items-center justify-center ${props.card.suit === "♥️" || props.card.suit === "♦️" ? "text-red-500 dark:text-red-950" : "text-black"} text-center`}>
           {middle}
         </div>
         <div className="mr-2 text-xl flex flex-end">
-          <div className={`text-right w-full mr-1 ${props.card.suit === "♥️" || props.card.suit === "♦️" ? "text-red-500" : "text-black"}`}>{topAndBottom}</div>
+          <div className={`text-right w-full mr-1 ${props.card.suit === "♥️" || props.card.suit === "♦️" ? "text-red-500 dark:text-red-950" : "text-black"}`}>{topAndBottom}</div>
         </div>
       </div>
     </div>

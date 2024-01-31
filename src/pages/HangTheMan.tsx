@@ -4,6 +4,7 @@ import HangTheManWord from "../components/HangTheMan/HangTheManWord";
 import HangTheManDrawing from "../components/HangTheMan/HangTheManDrawing";
 import Keyboard from "../components/Keyboard";
 import ThemeSwitcher from "../components/ThemeSwitcher";
+import { Link } from "react-router-dom";
 
 const getWord = () => {
   return words[Math.floor(Math.random() * words.length)];
@@ -59,7 +60,10 @@ const HangTheMan = () => {
 
   return (
     <div className="w-[100vw] h-[100vh] bg-[#eef3f9] flex flex-wrap justify-center items-center font-inconsolata dark:bg-[#0b1523]">
-      <ThemeSwitcher />
+      <div className="w-full flex justify-around items-center">
+        <Link to="/" className="text-lg bg-blue-200 p-2 border border-black hover:bg-sky-100 hover:border-gray-400 hover:text-gray-600 dark:bg-gray-600 dark:hover:text-gray-800 dark:hover:border-gray-600 transition-all">&larr; GAMES MENU</Link>
+        <ThemeSwitcher moonColor="silver" sunColor="#62808c" />
+      </div>
       <div className="flex flex-col gap-1 my-0 mx-auto items-center max-w-[800px] bg-[#fefefe] dark:bg-[#152335] p-5">
       <div className="text-center text-lg">
         {win ? (
